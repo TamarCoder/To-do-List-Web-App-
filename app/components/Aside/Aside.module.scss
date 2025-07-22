@@ -1,0 +1,32 @@
+@import "..//..//color.scss";
+
+@import "..//..//media.scss";
+
+.asideContainer {
+  max-width: 365px;
+  width: 100%;
+  height: 100vh;
+  flex-shrink: 0;
+  border-radius: 0 8px 8px 0;
+  background: #ff6767;
+
+  // Desktop და დიდი ეკრანები - დეფოლტის მიხედვით
+  @media (max-width: $breakpoint-desktop) {
+    max-width: 280px;  // ოდნავ მოვჭრათ სიგანე ლეპტოპზე
+  }
+
+  // ტაბლეტზე - კიდევ ნაკლები სიგანე
+  @media (max-width: $breakpoint-tablet) {
+    max-width: 240px;
+    height: auto;      // შეიძლება არ იკავოს მთელი ეკრანი სიგანე
+    border-radius: 0 0 8px 8px; // თუ გვერდზე აღარ იქნება, ქვედა კუთხეები რბილდება
+  }
+
+  // მობილურებზე - გვერდითი ადგილი სრულად დაიკავოს
+  @media (max-width: $breakpoint-mobile) {
+    max-width: 100%;
+    width: 100%;
+    height: auto;
+    border-radius: 0; // სრული სიგანისთვის რაუნდინგი გამორთულია
+  }
+}

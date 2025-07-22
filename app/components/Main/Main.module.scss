@@ -1,0 +1,29 @@
+@import '..//../color.scss';
+@import '..//..//media.scss';
+
+
+
+
+.mainContainer {
+  flex: 1;
+  height: 100vh;
+  padding: 24px;
+  border-radius: 16px;
+  display: flex;
+  flex-direction: column;
+ 
+
+  @media (max-width: $breakpoint-desktop) {
+    padding: 24px 32px;
+  }
+
+  @media (max-width: $breakpoint-tablet) {
+    padding: 16px 24px;
+  }
+
+  @media (max-width: $breakpoint-mobile) {
+    padding: 12px 16px;
+  }
+}
+
+ 

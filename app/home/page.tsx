@@ -1,8 +1,11 @@
-
+import Main from '../components/Main/Main'
+import styles from './home.module.scss'
 
 
 export default function  home () {
     return (
-        <div>this is home page </div>
+         <section className={styles.homeContainer}>
+              <Main/>
+         </section>
     )
 }

@@ -1,0 +1,81 @@
+@import "..//..//color.scss";
+@import "..//..//media.scss";
+
+.headerContainer {
+  width: 100%;
+  display: flex;
+  height: auto;
+  align-items: center;
+  justify-content: space-between;
+  padding: 30px 20px;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 12px;
+  background: #f8f8f8;
+  box-shadow: 0px 4px 12px 0px rgba(0, 0, 0, 0.07);
+
+  @media (max-width: $breakpoint-tablet) {
+    flex-direction: column;
+    align-items: stretch;
+    padding: 10px 16px;
+    gap: 16px;
+  }
+
+  @media (max-width: $breakpoint-mobile) {
+    padding: 8px 12px;
+  }
+}
+
+.headerLogo {
+  
+  
+  @media (max-width: $breakpoint-tablet) {
+    margin: 0 auto;
+  }
+}
+
+.headerSearch {
+  width: 695px;
+  height: 36px;
+  flex-shrink: 1;
+  background-color: greenyellow;
+  border-radius: 8px;
+  box-shadow: -26px 108px 31px 0px rgba(0, 0, 0, 0),
+    -17px 69px 28px 0px rgba(0, 0, 0, 0.01),
+    -9px 39px 24px 0px rgba(0, 0, 0, 0.02),
+    -4px 17px 18px 0px rgba(0, 0, 0, 0.03),
+    -1px 4px 10px 0px rgba(0, 0, 0, 0.04);
+
+  @media (max-width: $breakpoint-tablet) {
+    width: 100%;
+  }
+}
+
+.headerAcount {
+  width: 202px;
+  height: 36px;
+  background-color: greenyellow;
+
+  @media (max-width: $breakpoint-tablet) {
+    width: 100%;
+  }
+}
+
+.heading {
+  color: #000;
+  font-family: Inter;
+  font-size: 32px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+}
+
+.headingActive {
+  color: #ff6767;
+
+  font-family: Inter;
+  font-size: 32px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+}
