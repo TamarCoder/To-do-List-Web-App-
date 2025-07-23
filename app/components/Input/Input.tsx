@@ -6,12 +6,23 @@ import styles from "./Input.module.scss";
 import { InputProps } from "./input.type";
 
 const Input = forwardRef<HTMLInputElement, InputProps>((props, ref) => {
-  const { iconLeft, className, name, ...inputProps } = props;
+  const { iconLeft, iconRight,  className, name, ...inputProps } = props;
 
   return (
     <div className={styles.inputWrapper}>
+      {iconRight && (
+        <div className={styles.iconLeft}>
+          <Icon
+            name={props.name as IconName}
+            width={20}
+            height={20}
+            alt={name || "icon"}
+          />
+        </div>
+      )}
+
       <input
-        ref={ref}  
+        ref={ref}
         className={`${styles.input} ${className || ""}`.trim()}
         name={name}
         {...inputProps}
@@ -30,10 +41,5 @@ const Input = forwardRef<HTMLInputElement, InputProps>((props, ref) => {
   );
 });
 
-Input.displayName = "Input"; // აუცილებელია forwardRef-ისთვის
+Input.displayName = "Input";
 export default Input;
-
-
-
-
- 

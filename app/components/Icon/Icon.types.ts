@@ -10,7 +10,8 @@ export enum IconName {
      email = 'email',
      password = 'password',
      confirm = 'confirm',
-     check = 'check'
+     check = 'check',
+     search = 'search'
 }
 
 export interface IconProps {

@@ -27,8 +27,6 @@
 }
 
 .headerLogo {
-  
-  
   @media (max-width: $breakpoint-tablet) {
     margin: 0 auto;
   }
@@ -38,7 +36,6 @@
   width: 695px;
   height: 36px;
   flex-shrink: 1;
-  background-color: greenyellow;
   border-radius: 8px;
   box-shadow: -26px 108px 31px 0px rgba(0, 0, 0, 0),
     -17px 69px 28px 0px rgba(0, 0, 0, 0.01),
@@ -50,6 +47,36 @@
     width: 100%;
   }
 }
+
+
+.inputWrapper {
+  position: relative;
+  width: 100%;
+}
+
+.input {
+  width: 100%;
+  padding: 10px 40px 10px 12px;  
+  font-size: 16px;
+  border: none;
+  border-radius: 8px;
+}
+
+.icon {
+  position: absolute;
+  right: 0px;
+  top: 50%;
+  transform: translateY(-50%);
+  
+}
+
+
+
+
+
+
+
+
 
 .headerAcount {
   width: 202px;
