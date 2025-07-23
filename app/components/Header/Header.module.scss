@@ -71,22 +71,36 @@
 }
 
 
-
-
-
-
-
-
-
 .headerAcount {
   width: 202px;
   height: 36px;
-  background-color: greenyellow;
+ 
+  display: flex;
+  align-items: center;
+  gap: 5px;
+
 
   @media (max-width: $breakpoint-tablet) {
     width: 100%;
   }
+
+  .day{
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    margin-left: 10px;
+
+    & {
+      font-size: 14px;
+      font-family: sans-serif;
+    }
+  }
 }
+
+
+
+
+
 
 .heading {
   color: #000;

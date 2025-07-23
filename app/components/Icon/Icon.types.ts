@@ -11,7 +11,9 @@ export enum IconName {
      password = 'password',
      confirm = 'confirm',
      check = 'check',
-     search = 'search'
+     search = 'search',
+     bell = 'bell',
+     calendar = 'calendar',
 }
 
 export interface IconProps {

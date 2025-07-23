@@ -29,7 +29,14 @@ export default function Header() {
           />
         </div>
       </div>
-      <div className={styles.headerAcount}></div>
+      <div className={styles.headerAcount}>
+        <Icon name={IconName.bell} width={36} height={36} alt="search"/>
+        <Icon name={IconName.calendar} width={36} height={36} alt="search" />
+        <div className={styles.day}>
+          <p>Tuesday</p>
+          <p> 20/06/2023</p>
+        </div>
+      </div>
     </header>
   );
 }
