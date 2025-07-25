@@ -1,0 +1,363 @@
+@import '..//..//color.scss';
+@import '..//..//media.scss';
+
+.todoContainer {
+  display: flex;
+  flex-direction: column;
+  padding: 20px 23px 46px;
+  border-radius: 14px;
+  gap: 30px;
+  background: #f5f8ff;
+  box-shadow: 0 121px 34px rgba(0, 0, 0, 0),
+    0 77px 31px rgba(0, 0, 0, 0.01),
+    0 44px 26px rgba(0, 0, 0, 0.02),
+    0 19px 19px rgba(0, 0, 0, 0.03),
+    0 5px 11px rgba(0, 0, 0, 0.04);
+
+  @media (max-width: $breakpoint-large-desktop) {
+    padding: 18px 20px 40px;
+    gap: 28px;
+  }
+
+  @media (max-width: $breakpoint-desktop) {
+    padding: 16px 18px 36px;
+    gap: 25px;
+  }
+
+  @media (max-width: $breakpoint-tablet) {
+    padding: 14px 16px 30px;
+    gap: 22px;
+  }
+
+  @media (max-width: $breakpoint-mobile) {
+    padding: 12px 14px 25px;
+    gap: 18px;
+  }
+}
+
+.taskStatus {
+  flex-shrink: 0;
+  border-radius: 14px;
+  background: #f5f8ff;
+  box-shadow: 0 71px 20px rgba(0, 0, 0, 0),
+    0 45px 18px rgba(0, 0, 0, 0.01),
+    0 26px 15px rgba(0, 0, 0, 0.02),
+    0 11px 11px rgba(0, 0, 0, 0.03),
+    0 3px 6px rgba(0, 0, 0, 0.04);
+  display: flex;
+  flex-direction: column;
+  padding: 45px;
+  justify-content: center;
+  gap: 20px;
+
+  @media (max-width: $breakpoint-large-desktop) {
+    padding: 40px;
+  }
+
+  @media (max-width: $breakpoint-desktop) {
+    padding: 35px;
+  }
+
+  @media (max-width: $breakpoint-tablet) {
+    padding: 30px;
+  }
+
+  @media (max-width: $breakpoint-mobile) {
+    padding: 25px;
+  }
+}
+
+.boxLeft {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+
+  p {
+    color: #ff6767;
+    font-family: sans-serif;
+    font-size: 15px;
+    font-weight: 500;
+
+    @media (max-width: $breakpoint-tablet) {
+      font-size: 14px;
+    }
+
+    @media (max-width: $breakpoint-mobile) {
+      font-size: 13px;
+    }
+  }
+}
+
+.resultContainer {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+
+  @media (max-width: $breakpoint-tablet) {
+    gap: 12px;
+  }
+
+  @media (max-width: $breakpoint-mobile) {
+    gap: 10px;
+  }
+}
+
+.wrapper {
+  position: relative;
+  width: 100px;
+  height: 100px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+
+  @media (max-width: $breakpoint-mobile) {
+    width: 80px;
+    height: 80px;
+    gap: 8px;
+  }
+}
+
+.boxImg {
+  width: 100px;
+  height: 100px;
+  position: relative;
+  transform: rotate(-100deg);
+
+  @media (max-width: $breakpoint-mobile) {
+    width: 80px;
+    height: 80px;
+  }
+}
+
+.green {
+  width: 100px;
+  height: 100px;
+  position: absolute;
+  top: 5%;
+  transform: rotate(-8deg);
+
+  @media (max-width: $breakpoint-mobile) {
+    width: 80px;
+    height: 80px;
+    top: 6%;
+  }
+}
+
+.dots {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+
+  p {
+    color: #000;
+    font-family: sans-serif;
+    font-size: 15px;
+    font-weight: 500;
+    line-height: normal;
+
+    @media (max-width: $breakpoint-mobile) {
+      font-size: 13px;
+    }
+  }
+}
+
+.boxImgBlue {
+  width: 100px;
+  height: 100px;
+  position: relative;
+  transform: rotate(4deg);
+
+  @media (max-width: $breakpoint-mobile) {
+    width: 80px;
+    height: 80px;
+  }
+}
+
+.blue {
+  width: 100px;
+  height: 100px;
+  position: absolute;
+  top: -1%;
+  left: -3%;
+  transform: rotate(4deg);
+
+  @media (max-width: $breakpoint-mobile) {
+    width: 80px;
+    height: 80px;
+    top: 0;
+    left: -2%;
+  }
+}
+
+.boxImgGrey {
+  width: 100px;
+  height: 100px;
+  position: relative;
+  transform: rotate(13deg);
+
+  @media (max-width: $breakpoint-mobile) {
+    width: 80px;
+    height: 80px;
+  }
+}
+
+.red {
+  width: 100px;
+  height: 100px;
+  position: absolute;
+  top: 13%;
+  right: -50%;
+  transform: rotate(14deg);
+
+  @media (max-width: $breakpoint-mobile) {
+    width: 80px;
+    height: 80px;
+    top: 10%;
+    right: -40%;
+  }
+}
+
+.tasks {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  padding: 25px;
+  gap: 15px;
+
+  @media (max-width: $breakpoint-tablet) {
+    padding: 20px;
+    gap: 12px;
+  }
+
+  @media (max-width: $breakpoint-mobile) {
+    padding: 16px;
+    gap: 10px;
+  }
+}
+
+.task {
+ 
+  border-radius: 14px;
+  padding: 10px 14px;
+  display: flex;
+  border: 1px solid rgb(166, 166, 166);
+  gap: 15px;
+
+  @media (max-width: $breakpoint-tablet) {
+    width: 100%;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  @media (max-width: $breakpoint-mobile) {
+    width: 100%;
+    padding: 8px 12px;
+  }
+}
+
+.taskNote {
+  width: 14px;
+  height: 14px;
+  flex-shrink: 0;
+  background-image: url("/VectorRed.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  stroke: #f21e1e;
+  stroke-width: 2px;
+  display: flex;
+  align-items: center;
+
+  @media (max-width: $breakpoint-mobile) {
+    width: 12px;
+    height: 12px;
+  }
+}
+
+.taskInfo {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.taskHeading {
+  width: 100%;
+  height: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.heading {
+  font-family: sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  color: #000;
+
+  @media (max-width: $breakpoint-tablet) {
+    font-size: 14px;
+  }
+
+  @media (max-width: $breakpoint-mobile) {
+    font-size: 13px;
+  }
+}
+
+.taskContent {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+
+  @media (max-width: $breakpoint-tablet) {
+    flex-direction: column;
+  }
+}
+
+.img {
+  width: 88px;
+  height: 88px;
+  border-radius: 14px;
+  object-fit: cover;
+  object-position: center;
+  flex-shrink: 0;
+
+  @media (max-width: $breakpoint-mobile) {
+    width: 100%;
+    height: auto;
+  }
+}
+
+.taskData {
+  display: flex;
+  gap: 20px;
+
+  @media (max-width: $breakpoint-mobile) {
+    flex-direction: column;
+    gap: 10px;
+  }
+}
+
+.name, .span {
+  font-family: sans-serif;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: normal;
+
+  @media (max-width: $breakpoint-mobile) {
+    font-size: 11px;
+  }
+}
+
+.name {
+  color: #000;
+}
+
+.span {
+  color: #42ade2;
+}

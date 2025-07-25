@@ -20,7 +20,9 @@ export enum IconName {
      tasks = 'tasks',
      setting = 'setting',
      help = 'help',
-     logout = 'logout'
+     logout = 'logout',
+     plus ='plus',
+     menu = 'menu'
 }
 
 export interface IconProps {

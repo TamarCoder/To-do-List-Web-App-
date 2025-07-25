@@ -8,17 +8,17 @@
   padding: 18px 10px;
   display: flex;
   flex-direction: column;
-  gap: 230px;
+ 
 
   @media (max-width: $breakpoint-desktop) {
     height: 650px;
-    gap: 180px;
+ 
     padding: 16px 20px;
   }
 
   @media (max-width: $breakpoint-tablet) {
     height: auto;
-    gap: 100px;
+   
     padding: 14px 16px;
   }
 
