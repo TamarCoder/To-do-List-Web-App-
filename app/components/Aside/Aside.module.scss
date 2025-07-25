@@ -1,5 +1,5 @@
 @import "..//..//color.scss";
-
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=My+Soul&display=swap");
 @import "..//..//media.scss";
 
 .asideContainer {
@@ -9,24 +9,120 @@
   flex-shrink: 0;
   border-radius: 0 8px 8px 0;
   background: #ff6767;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
 
-  // Desktop და დიდი ეკრანები - დეფოლტის მიხედვით
   @media (max-width: $breakpoint-desktop) {
-    max-width: 280px;  // ოდნავ მოვჭრათ სიგანე ლეპტოპზე
+    max-width: 280px;
   }
 
-  // ტაბლეტზე - კიდევ ნაკლები სიგანე
   @media (max-width: $breakpoint-tablet) {
     max-width: 240px;
-    height: auto;      // შეიძლება არ იკავოს მთელი ეკრანი სიგანე
-    border-radius: 0 0 8px 8px; // თუ გვერდზე აღარ იქნება, ქვედა კუთხეები რბილდება
+    height: auto;
+    border-radius: 0 0 8px 8px;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 16px;
   }
 
-  // მობილურებზე - გვერდითი ადგილი სრულად დაიკავოს
   @media (max-width: $breakpoint-mobile) {
     max-width: 100%;
     width: 100%;
     height: auto;
-    border-radius: 0; // სრული სიგანისთვის რაუნდინგი გამორთულია
+    border-radius: 0;
+    flex-direction: column;
+    align-items: center;
+    padding: 12px;
+  }
+}
+
+.asideLogo {
+  width: 173px;
+  height: 135px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 13px;
+
+  @media (max-width: $breakpoint-tablet) {
+    width: 140px;
+    height: 110px;
+    margin-top: 0;
+    gap: 10px;
+  }
+
+  @media (max-width: $breakpoint-mobile) {
+    width: 120px;
+    height: auto;
+    gap: 8px;
+  }
+}
+
+.asideProfile {
+  width: 86px;
+  height: 86px;
+  flex-shrink: 0;
+  background-image: url("/profile.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-radius: 50%;
+  border: 1px solid #fff;
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+
+  @media (max-width: $breakpoint-tablet) {
+    width: 72px;
+    height: 72px;
+  }
+
+  @media (max-width: $breakpoint-mobile) {
+    width: 60px;
+    height: 60px;
+    
+  }
+}
+
+.profileInfo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+}
+
+.hedlain {
+  color: #ffffff;
+  font-size: 16px;
+  font-weight: 600;
+  font-family: "Inter", sans-serif;
+
+  @media (max-width: $breakpoint-tablet) {
+    font-size: 14px;
+  }
+
+  @media (max-width: $breakpoint-mobile) {
+    font-size: 12px;
+  }
+}
+
+.subtitle {
+  color: #fff;
+  font-size: 12px;
+  font-weight: 400;
+  font-family: "Inter", sans-serif;
+
+  @media (max-width: $breakpoint-tablet) {
+    font-size: 11px;
+  }
+
+  @media (max-width: $breakpoint-mobile) {
+    font-size: 10px;
   }
 }

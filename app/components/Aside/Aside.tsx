@@ -1,3 +1,4 @@
+import { Navigation } from '../Navigation/Navigation';
 import styles from './Aside.module.scss';
 
 
@@ -7,9 +8,16 @@ import styles from './Aside.module.scss';
 export default function Aside () {
     return (
         <aside className={styles.asideContainer}>
-          orem ipsum dolor sit, amet consectetur adipisicing elit.
-            Illo nisi est tenetur numquam tempore distinctio optio officia dolorum 
-            aliquam quae explicabo, volu Lptatibus laborum quibusdam quaerat quisquam perferendis non excepturi.
+            <div className={styles.asideLogo}>
+                <div className={styles.asideProfile}></div>
+                <div className={styles.profileInfo}>
+                    <h2 className={styles.hedlain}>Sundar Gurung</h2>
+                    <span className={styles.subtitle}>sundargurung360@gmail.com</span>
+                </div>
+
+            </div>
+            <Navigation/>
+        
         </aside>
     )
 }

@@ -14,6 +14,13 @@ export enum IconName {
      search = 'search',
      bell = 'bell',
      calendar = 'calendar',
+     dashboared = 'dashboared',
+     vital = 'vital',
+     myTask = 'myTask',
+     tasks = 'tasks',
+     setting = 'setting',
+     help = 'help',
+     logout = 'logout'
 }
 
 export interface IconProps {
