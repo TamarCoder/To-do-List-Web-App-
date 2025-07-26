@@ -1,10 +1,15 @@
+"use client"
+import { useState } from "react";
 import Button from "../Button/Button";
 import { ButtonProps } from "../Button/Button.types";
 import Icon from "../Icon/Icon";
 import { IconName } from "../Icon/Icon.types";
 import styles from "./Todo.module.scss";
+import { TaskPopap } from "../AddTaskPopap/TaskPopap";
 
 export const Todo = (props: ButtonProps) => {
+
+   const [isPopupOpen, setIsPopupOpen] = useState(false);
   
   return (
     <section className={styles.todoContainer}>
@@ -13,7 +18,7 @@ export const Todo = (props: ButtonProps) => {
           <img src="/Pending.svg" alt="Pending" />
           <p>To-Do</p>
         </div>
-        <button onClick={props.onClick} className={styles.addTask}>
+        <button   onClick={() => setIsPopupOpen(true)} className={styles.addTask}>
           {props.children}
           <Icon
             name={IconName.plus}
@@ -142,6 +147,9 @@ export const Todo = (props: ButtonProps) => {
           </div>
         </div>
       </section>
+
+
+        {isPopupOpen && <TaskPopap onClose={() => setIsPopupOpen(false)} />}
     </section>
   );
 };
