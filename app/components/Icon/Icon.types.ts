@@ -22,7 +22,10 @@ export enum IconName {
      help = 'help',
      logout = 'logout',
      plus ='plus',
-     menu = 'menu'
+     menu = 'menu',
+     edit = 'edit',
+     trash = 'trash'
+
 }
 
 export interface IconProps {
