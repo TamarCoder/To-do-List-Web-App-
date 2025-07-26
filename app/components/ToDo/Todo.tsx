@@ -8,14 +8,13 @@ import styles from "./Todo.module.scss";
 import { TaskPopap } from "../AddTaskPopap/TaskPopap";
 import { isTodo } from "../../store/task";
 
-
 interface TodoProps {
   onAddTaskClick?: () => void;
-  ButtonProps?: ButtonProps
+  ButtonProps?: ButtonProps;
 }
 
 export const Todo = (props: TodoProps) => {
-  const [isPopupOpen, setIsPopupOpen] = useState(false);
+ 
   const todos = isTodo((state) => state.todos);
 
   return (
@@ -25,8 +24,7 @@ export const Todo = (props: TodoProps) => {
           <img src="/Pending.svg" alt="Pending" />
           <p>To-Do</p>
         </div>
-        <button onClick={props.onAddTaskClick}  className={styles.addTask}>
- 
+        <button onClick={props.onAddTaskClick} className={styles.addTask}>
           <Icon
             name={IconName.plus}
             width={20}
@@ -44,10 +42,12 @@ export const Todo = (props: TodoProps) => {
             <div className={styles.taskInfo}>
               <div className={styles.taskHeading}>
                 <p className={styles.heading}> {todo.title}</p>
+                <Icon name={IconName.menu} width={25} height={25}/>
               </div>
+
               <div className={styles.taskContent}>
                 <div className={styles.text}>
-                  <p>{todo.title}</p>
+                  <p>{todo.text}</p>
                 </div>
               </div>
               <div className={styles.taskData}>
@@ -67,8 +67,6 @@ export const Todo = (props: TodoProps) => {
           </div>
         ))}
       </section>
-
-         
     </section>
   );
 };

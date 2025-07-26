@@ -5,6 +5,7 @@ import { TaskStatus } from "../TaskStatus/TaskStatus";
 import { Todo } from "../ToDo/Todo";
 import { Banner } from "../WelcomeBanner/Banner";
 import styles from "./Main.module.scss";
+import { Complate } from "../ComplateTasks/Complate";
 
 export default function Main() {
   const [isPopupOpen, setIsPopupOpen] = useState(false);
@@ -15,6 +16,7 @@ export default function Main() {
       <div className={styles.taskWrapper}>
         <Todo  onAddTaskClick={() => setIsPopupOpen(true)} />
         <TaskStatus />
+        <Complate/>
       </div>
 
       {isPopupOpen && <TaskPopap onClose={() => setIsPopupOpen(false)} />}
