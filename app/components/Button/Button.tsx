@@ -18,7 +18,6 @@ export default function (props: ButtonProps) {
       buttonClasses.push(variantClass);
     }
   }
-  
 
   if (props.size) {
     const sizeClass = styles[props.size];
@@ -29,7 +28,13 @@ export default function (props: ButtonProps) {
 
   return (
     <div>
-      <button className={buttonClasses.join(" ").trim()}> {props.lable}</button>
+      <button
+        className={buttonClasses.join(" ").trim()}
+        onClick={props.onClick}
+        type={props.type}
+      >
+        {props.lable}
+      </button>
     </div>
   );
 }
