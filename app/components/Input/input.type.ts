@@ -14,7 +14,8 @@ export interface InputProps {
   className?: string;
   value?: string;
   onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void;
-  type: 'text' | 'email' | 'password';
+  type?: 'text' | 'email' | 'password' | 'date';
+  
 }
 
 

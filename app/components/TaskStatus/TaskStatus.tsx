@@ -106,48 +106,7 @@ export const TaskStatus = (props: ButtonProps) => {
                 </p>
               </div>
             </div>
-          </div>
-
-          <div className={styles.task}>
-            <div className={styles.taskNote}></div>
-            <div className={styles.taskInfo}>
-              <div className={styles.taskHeading}>
-                <p className={styles.heading}>
-                  Attend Nischal’s Birthday Party
-                </p>
-                <Icon
-                  name={IconName.menu}
-                  width={23}
-                  height={23}
-                  className={styles.icon}
-                />
-              </div>
-              <div className={styles.taskContent}>
-                <div className={styles.text}>
-                  <p>
-                    Buy gifts on the way and pick up cake from the bakery. (6 PM
-                    | Fresh Elements).....
-                  </p>
-                </div>
-                <div className={styles.img}>
-                  <img src="/taskImg.jpg" alt="img" className={styles.img} />
-                </div>
-              </div>
-              <div className={styles.taskData}>
-                <p className={styles.name}>
-                  Priority: <span className={styles.span}> Moderate</span>
-                </p>
-                <p className={styles.name}>
-                  Status: <span className={styles.span}> Not Started</span>
-                </p>
-                <p className={styles.name}>
-                  Created on: <span className={styles.span}> 20/06/2023 </span>
-                </p>
-              </div>
-            </div>
-          </div>
-
-          
+          </div>          
         </section>
       </div>
     </section>

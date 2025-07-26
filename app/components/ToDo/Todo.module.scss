@@ -80,7 +80,6 @@
   display: flex;
   padding: 25px;
   gap: 15px;
-  flex-direction: column;
 }
 
 .task {
@@ -90,7 +89,6 @@
   border-radius: 14px;
   padding: 14px;
   display: flex;
-  flex-direction: column;
   gap: 15px;
 }
 
@@ -135,8 +133,8 @@
 .taskContent {
   display: flex;
   align-items: center;
+  justify-content: space-between;
   gap: 10px;
-  justify-content: center;
 
   @media (max-width: $breakpoint-tablet) {
     gap: 8px;
@@ -149,8 +147,8 @@
 }
 
 .img {
-  width: 88px;
-  height: 88px;
+  width: 200px;
+  height: 200px;
   flex-shrink: 0;
   border-radius: 14px;
   object-position: center;
