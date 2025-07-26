@@ -53,9 +53,7 @@ export const Todo = (props: ButtonProps) => {
                    {todo.text}
                   </p>
                 </div>
-                <div className={styles.img}>
-                  <img src="/taskImg.jpg" alt="img" className={styles.img} />
-                </div>
+                
               </div>
               <div className={styles.taskData}>
                 <p className={styles.name}>
