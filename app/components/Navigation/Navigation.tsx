@@ -11,7 +11,7 @@ export const Navigation = () => {
 
   const navItems = [
     { href: "/home", name: IconName.dashboared, label: "Dashboard" },
-    { href: "/vitalTask", name: IconName.vital, label: "Vital Task" },
+    { href: "#", name: IconName.vital, label: "Vital Task" },
     { href: "#", name: IconName.myTask, label: "My Tasks" },
     { href: "#", name: IconName.tasks, label: "Task Categories" },
     { href: "#", name: IconName.setting, label: "Settings" },
