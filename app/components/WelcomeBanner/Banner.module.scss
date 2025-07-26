@@ -7,19 +7,26 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-
-  @media (max-width: $breakpoint-desktop) {
+  background: white;
+  padding: 32px 40px;
+  border-radius: 12px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+@media (max-width: 1200px) {
+  .banerContrainer {
     padding: 24px 32px;
   }
-
-  @media (max-width: $breakpoint-tablet) {
+}
+@media (max-width: 768px) {
+  .banerContrainer {
     padding: 16px 24px;
     flex-direction: column;
     align-items: flex-start;
     gap: 16px;
   }
-
-  @media (max-width: $breakpoint-mobile) {
+}
+@media (max-width: 480px) {
+  .banerContrainer {
     padding: 12px 16px;
   }
 }
@@ -28,23 +35,37 @@
   display: flex;
   align-items: center;
   gap: 10px;
+}
 
-  h1 {
-    color: #000;
-    font-family: Inter;
-    font-size: 45px;
-    font-style: normal;
-    font-weight: 500;
-    line-height: 34px;
+.title h1 {
+  color: #000;
+  font-family: "Inter", sans-serif;
+  font-size: 45px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 34px;
+}
 
-    @media (max-width: $breakpoint-tablet) {
-      font-size: 36px;
-    }
+.title img {
+  width: 40px;
+  height: 40px;
+}
 
-    @media (max-width: $breakpoint-mobile) {
-      font-size: 28px;
-      line-height: 32px;
-    }
+@media (max-width: 768px) {
+  .title h1 {
+    font-size: 36px;
+  }
+}
+
+@media (max-width: 480px) {
+  .title h1 {
+    font-size: 28px;
+    line-height: 32px;
+  }
+
+  .title img {
+    width: 32px;
+    height: 32px;
   }
 }
 
@@ -52,16 +73,47 @@
   display: flex;
   align-items: center;
   gap: 25px;
+}
 
-  @media (max-width: $breakpoint-tablet) {
+@media (max-width: 768px) {
+  .invate {
     flex-wrap: wrap;
     gap: 20px;
   }
+}
 
-  @media (max-width: $breakpoint-mobile) {
+@media (max-width: 480px) {
+  .invate {
     flex-direction: column;
     align-items: flex-start;
     gap: 12px;
+    width: 100%;
+  }
+}
+.images {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+@media (max-width: 480px) {
+  .images {
+    gap: 4px;
+  }
+}
+
+.img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border: 2px solid white;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+@media (max-width: 480px) {
+  .img {
+    width: 40px;
+    height: 40px;
   }
 }
 
@@ -69,29 +121,24 @@
   width: 50px;
   height: 50px;
   flex-shrink: 0;
-  background-image: url("/profile.5.svg");
-  background-position: center;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
   background-size: cover;
   display: flex;
   align-items: center;
   justify-content: center;
   font-size: 17px;
   color: white;
+  border-radius: 50%;
+  border: 2px solid white;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  position: relative;
+}
 
-  @media (max-width: $breakpoint-mobile) {
+@media (max-width: 480px) {
+  .prrofile {
     width: 40px;
     height: 40px;
     font-size: 15px;
-  }
-}
-
-.img {
-  width: 50px;
-  height: 50px;
-
-  @media (max-width: $breakpoint-mobile) {
-    width: 40px;
-    height: 40px;
   }
 }
 
@@ -101,21 +148,14 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: #00000052;
-  border-radius: 8px;
-
-  @media (max-width: $breakpoint-mobile) {
-    border-radius: 6px;
-  }
+  background-color: rgba(0, 0, 0, 0.3);
+  border-radius: 50%;
+  font-weight: 600;
 }
 
-.images {
-  display: flex;
-  align-items: center;
-  gap: 5px;
-
-  @media (max-width: $breakpoint-mobile) {
-    gap: 4px;
+@media (max-width: 480px) {
+  .ovefley {
+    border-radius: 50%;
   }
 }
 
@@ -124,41 +164,61 @@
   height: 36.276px;
   flex-shrink: 0;
   background: none;
-  border: 2px solid #ff6767;
+  border: 2px solid var(--primary-color);
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 8px;
   border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
 
-  // ✅ მხოლოდ მცირე ზომებზე, რომ ტექსტი არ გაიჭრას
-  @media (max-width: $breakpoint-mobile) {
+.btn:hover {
+  background: var(--primary-color);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(255, 103, 103, 0.3);
+}
+
+.btn:hover span {
+  color: rgb(254, 0, 0);
+}
+
+ 
+
+@media (max-width: 480px) {
+  .btn {
     width: auto;
     padding: 6px 10px;
     gap: 6px;
   }
+}
 
+.invt {
+  width: 19.347px;
+  height: 11.286px;
+  flex-shrink: 0;
+}
+
+@media (max-width: 480px) {
   .invt {
-    width: 19.347px;
-    height: 11.286px;
-    flex-shrink: 0;
-
-    @media (max-width: $breakpoint-mobile) {
-      width: 16px;
-      height: auto;
-    }
+    width: 16px;
+    height: auto;
   }
+}
 
-  span {
-    color: #ff6767;
-    font-family: sans-serif;
-    font-size: 14px;
-    font-style: normal;
-    font-weight: 500;
-    line-height: normal;
+.btn span {
+  color: var(--primary-color);
+  font-family: sans-serif;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  transition: color 0.3s ease;
+}
 
-    @media (max-width: $breakpoint-mobile) {
-      font-size: 13px;
-    }
+@media (max-width: 480px) {
+  .btn span {
+    font-size: 13px;
   }
 }

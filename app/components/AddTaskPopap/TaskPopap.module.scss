@@ -1,11 +1,6 @@
 @import "..//..//color.scss";
 @import "..//..//media.scss";
 
-$breakpoint-mobile: 480px;
-$breakpoint-tablet: 768px;
-$breakpoint-desktop: 1024px;
-$breakpoint-large-desktop: 1440px;
-
 .popupOverlay {
   position: fixed;
   top: 0;
@@ -19,10 +14,7 @@ $breakpoint-large-desktop: 1440px;
   z-index: 1000;
 }
 
-.popup-overlay.active {
-  opacity: 1;
-  visibility: visible;
-}
+ 
 
 .container {
   background: white;

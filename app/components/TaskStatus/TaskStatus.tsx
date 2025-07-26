@@ -1,114 +1,142 @@
 import { ButtonProps } from "../Button/Button.types";
-import Icon from "../Icon/Icon";
-import { IconName } from "../Icon/Icon.types";
 import styles from "./TaskStatus.module.scss";
+
+type StatusColor = "green" | "blue" | "red" | "grey";
+
+interface StatusItem {
+  id: string;
+  label: string;
+  color: StatusColor;
+  icon: string;
+  progress: number;
+}
+const colors: Record<StatusColor, string> = {
+  green: "#10b981",
+  blue: "#3b82f6",
+  red: "#ef4444",
+  grey: "#6b7280",
+};
+
+const statusItems: StatusItem[] = [
+  {
+    id: "completed",
+    label: "Completed",
+    color: "green",
+    icon: "✓",
+    progress: 100,
+  },
+  {
+    id: "in-progress",
+    label: "In Progress",
+    color: "blue",
+    icon: "◐",
+    progress: 60,
+  },
+  {
+    id: "not-started",
+    label: "Not Started",
+    color: "red",
+    icon: "○",
+    progress: 0,
+  },
+];
+
+const getColorStyles = (color: StatusColor) => ({
+  stroke: colors[color],
+  textColor: colors[color],
+  dotColor: colors[color],
+});
 
 export const TaskStatus = (props: ButtonProps) => {
   return (
-    <section className={styles.todoContainer}>
+    <div className={styles.todoContainer}>
       <div className={styles.taskStatus}>
         <div className={styles.boxLeft}>
-          <img src="/TaskComplete.svg" alt="Pending" />
-          <p>Task Status</p>
+          <div className={styles.iconWrapper}>
+            <svg
+              className={styles.headerIcon}
+              fill="currentColor"
+              viewBox="0 0 20 20"
+            >
+              <path
+                fillRule="evenodd"
+                d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                clipRule="evenodd"
+              />
+            </svg>
+          </div>
+          <p className={styles.headerText}>Task Status</p>
         </div>
-
         <div className={styles.resultContainer}>
-          <div className={styles.wrapper}>
-            <div>
-              <div className={styles.boxImg}>
-                <img src="/EllipseGrey.svg" alt="" />
-              </div>
-              <div className={styles.green}>
-                <img src="/EllipseGreen.svg" alt="" />
-              </div>
-            </div>
+          {statusItems.map((item, index) => {
+            const colorStyle = getColorStyles(item.color);
+            return (
+              <div
+                key={item.id}
+                className={styles.wrapperHover}
+                style={{ animationDelay: `${index * 0.1}s` }}
+              >
+                <div className={styles.circleContainer}>
+                  <svg className={styles.progressCircle} viewBox="0 0 100 100">
+                    <circle
+                      cx="50"
+                      cy="50"
+                      r="40"
+                      fill="none"
+                      stroke="#e5e7eb"
+                      strokeWidth="8"
+                      className={styles.backgroundCircle}
+                    />
+                    <circle
+                      cx="50"
+                      cy="50"
+                      r="40"
+                      fill="none"
+                      stroke={colorStyle.stroke}
+                      strokeWidth="8"
+                      strokeLinecap="round"
+                      strokeDasharray={`${2 * Math.PI * 40}`}
+                      strokeDashoffset={`${
+                        2 * Math.PI * 40 * (1 - item.progress / 100)
+                      }`}
+                      className={styles.progressStroke}
+                      style={{ animationDelay: `${index * 0.2 + 0.5}s` }}
+                    />
+                  </svg>
+                  <div
+                    className={styles.centerIcon}
+                    style={{ color: colorStyle.textColor }}
+                  >
+                    {item.icon}
+                  </div>
+                </div>
+                <div className={styles.dots}>
+                  <div
+                    className={styles.statusDot}
+                    style={{ backgroundColor: colorStyle.dotColor }}
+                  ></div>
+                  <p className="dotsText">{item.label}</p>
+                </div>
 
-            <div className={styles.dots}>
-              <img src="/dotGreen.svg" alt="dot" />
-              <p>Completed</p>
-            </div>
+                <div className={styles.progressText}>
+                  {item.progress}% Complete
+                </div>
+              </div>
+            );
+          })}
+        </div>
+
+        {/* Overall Progress */}
+        <div className={styles.overallProgress}>
+          <div className={styles.progressHeader}>
+            <span className={styles.progressHeaderText}>Overall Progress</span>
+            <span className={styles.progressHeaderPercent}>53%</span>
           </div>
-
-          <div className={styles.wrapper}>
-            <div>
-              <div className={styles.boxImgBlue}>
-                <img src="/Ellipse3.svg" alt="" />
-              </div>
-              <div className={styles.blue}>
-                <img src="/EllipseBlue.svg" alt="" />
-              </div>
-            </div>
-
-            <div className={styles.dots}>
-              <img src="/dotBlue.svg" alt="dot" />
-              <p>In Progress</p>
-            </div>
-          </div>
-
-          <div className={styles.wrapper}>
-            <div>
-              <div className={styles.boxImgGrey}>
-                <img src="/Ellipse.svg" alt="" />
-              </div>
-              <div className={styles.red}>
-                <img src="/EllipseRed.svg" alt="" />
-              </div>
-            </div>
-            <div className={styles.dots}>
-              <img src="/dotRed.svg" alt="dot" />
-              <p>Not Started</p>
-            </div>
+          <div className={styles.progressBarContainer}>
+            <div className={styles.progressBar}></div>
           </div>
         </div>
       </div>
-
-      <div className={styles.complateTask}>
-        <div className={styles.boxLeft}>
-          <img src="/TaskComplete.svg" alt="Pending" />
-          <p>Task Status</p>
-        </div>
-
-        <section className={styles.tasks}>
-          <div className={styles.task}>
-            <div className={styles.taskNote}></div>
-            <div className={styles.taskInfo}>
-              <div className={styles.taskHeading}>
-                <p className={styles.heading}>
-                  Attend Nischal’s Birthday Party
-                </p>
-                <Icon
-                  name={IconName.menu}
-                  width={23}
-                  height={23}
-                  className={styles.icon}
-                />
-              </div>
-              <div className={styles.taskContent}>
-                <div className={styles.text}>
-                  <p>
-                    Buy gifts on the way and pick up cake from the bakery. (6 PM
-                    | Fresh Elements).....
-                  </p>
-                </div>
-                <div className={styles.img}>
-                  <img src="/taskImg.jpg" alt="img" className={styles.img} />
-                </div>
-              </div>
-              <div className={styles.taskData}>
-                <p className={styles.name}>
-                  Priority: <span className={styles.span}> Moderate</span>
-                </p>
-                <p className={styles.name}>
-                  Status: <span className={styles.span}> Not Started</span>
-                </p>
-                <p className={styles.name}>
-                  Created on: <span className={styles.span}> 20/06/2023 </span>
-                </p>
-              </div>
-            </div>
-          </div>          
-        </section>
-      </div>
-    </section>
+    </div>
   );
 };
