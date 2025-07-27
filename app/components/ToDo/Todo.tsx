@@ -7,6 +7,7 @@ import { IconName } from "../Icon/Icon.types";
 import styles from "./Todo.module.scss";
 import { TaskPopap } from "../AddTaskPopap/TaskPopap";
 import { isTodo } from "../../store/task";
+import { stat } from "fs";
 
 interface TodoProps {
   onAddTaskClick?: () => void;
@@ -15,6 +16,8 @@ interface TodoProps {
 
 export const Todo = (props: TodoProps) => {
   const todos = isTodo((state) => state.todos);
+  const removeTodo = isTodo((state) => state.removeTodo);
+  const addCompletedTask = isTodo((state) => state.addCompletedTask);
 
   return (
     <section className={styles.todoContainer}>
@@ -36,7 +39,7 @@ export const Todo = (props: TodoProps) => {
 
       <section className={styles.tasks} id="tasksContainer">
         {todos.map((todo) => (
-          <div className={styles.task}>
+          <div key={todo.id}  className={styles.task}>
             <div className={styles.taskNote}></div>
 
             <div className={styles.taskInfo}>
@@ -52,7 +55,6 @@ export const Todo = (props: TodoProps) => {
               </div>
 
               <div className={styles.taskData}>
-
                 <div className={styles.prriority}>
                   <p className={styles.name}>
                     <span className={styles.priorityExtreme}>
@@ -60,7 +62,10 @@ export const Todo = (props: TodoProps) => {
                     </span>
                   </p>
                   <p className={styles.name}>
-                    Status: <span className={styles.span}>Not Started</span>
+                    Status:{" "}
+                    <span className={styles.span}>
+                      {todo.completed ? "Completed" : "Not Started"}
+                    </span>
                   </p>
                   <p className={styles.name}>
                     Created on:{" "}
@@ -69,10 +74,18 @@ export const Todo = (props: TodoProps) => {
                 </div>
 
                 <div className={styles.editContianer}>
-                    <Button lable="Complated" variant="succsses"/>
-                    <Button lable="Edit Task" variant="warning"/>
-                    <Button lable="Delete Task" variant="error"/>
-
+                  <Button
+                    lable="Complated"
+                    variant="succsses"
+                    onClick={() => addCompletedTask(todo.id)}
+                    disabled={todo.completed}
+                  />
+                  <Button lable="Edit Task" variant="warning" />
+                  <Button
+                    lable="Delete Task"
+                    variant="error"
+                    onClick={() => removeTodo(todo.id)}
+                  />
                 </div>
               </div>
             </div>
