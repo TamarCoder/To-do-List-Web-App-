@@ -43,11 +43,11 @@ export const TaskPopap = (props: TaskPopapProps) => {
   };
 
   return (
-    <div className={styles.popupOverlay} id="popupOverlay"  >
+    <div className={styles.popupOverlay} id="popupOverlay">
       <section className={styles.container}>
         <div className={styles.top}>
           <p className={styles.title}>Add New Task</p>
-          <button className={styles.close} onClick={props.onClose} >
+          <button className={styles.close} onClick={props.onClose}>
             Go Back
           </button>
         </div>
@@ -155,7 +155,7 @@ export const TaskPopap = (props: TaskPopapProps) => {
         </form>
         <Button
           lable="Add Tasks"
-          className={styles.button}
+          variant="primary"
           type={ButtonType.button}
           onClick={onClick}
         />

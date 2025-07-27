@@ -107,7 +107,7 @@ export const RegisterForm: FC<RegisterFormProps> = ({
 
           <Button
             lable="Register"
-            variant="primaryLight"
+            variant="primary"
             type={ButtonType.submit}
           />
 

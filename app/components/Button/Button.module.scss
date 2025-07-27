@@ -1,23 +1,116 @@
-@import '..//..//padding.scss';
-@import '..//..//color.scss';
+@import "..//..//padding.scss";
+@import "..//..//color.scss";
 
 .container {
   padding: 20px 32px;
   border-radius: $borderRadius-sm;
   background: #d6d0d0;
   border: none;
-  color: white; 
+  color: white;
   cursor: pointer;
- 
 }
-
 
 .primary {
-  background-color: $primary;
-  color: white;
+  background-image: linear-gradient(
+    to right,
+    #d31027 0%,
+    #ea384d 51%,
+    #d31027 100%
+  );
+}
+.primary {
+  text-align: center;
+  text-transform: uppercase;
+  transition: 0.5s;
+  background-size: 200% auto;
+  box-shadow: 0 0 20px #eee;
+  display: block;
+  border-radius: 5px;
+}
+.primary:hover {
+  background-position: right center; /* change the direction of the change here */
+  color: #fff;
+  text-decoration: none;
 }
 
-.primaryLight {
-   background-color: $primaryLight;
-   color: white;
+.succsses {
+  background-image: linear-gradient(
+    to right,
+    #dce35b 0%,
+    #45b649 51%,
+    #dce35b 100%
+  );
+}
+.succsses {
+  padding: 15px 10px;
+
+  text-align: center;
+  text-transform: uppercase;
+  transition: 0.5s;
+  background-size: 200% auto;
+  color: white;
+  box-shadow: 0 0 20px #eee;
+  border-radius: 10px;
+  display: block;
+}
+
+.succsses:hover {
+  background-position: right center; /* change the direction of the change here */
+  color: #fff;
+  text-decoration: none;
+}
+
+.warning {
+  background-image: linear-gradient(
+    to right,
+    #f7971e 0%,
+    #ffd200 51%,
+    #f7971e 100%
+  );
+}
+.warning {
+  margin: 10px;
+  padding: 15px 10px;
+
+  text-align: center;
+  text-transform: uppercase;
+  transition: 0.5s;
+  background-size: 200% auto;
+  color: white;
+  box-shadow: 0 0 20px #eee;
+  border-radius: 10px;
+  display: block;
+}
+
+.warning:hover {
+  background-position: right center; /* change the direction of the change here */
+  color: #fff;
+  text-decoration: none;
+}
+
+.error {
+  background-image: linear-gradient(
+    to right,
+    #f00000 0%,
+    #dc281e 51%,
+    #f00000 100%
+  );
+}
+.error {
+  margin: 10px;
+  padding: 15px 10px;
+  text-align: center;
+  text-transform: uppercase;
+  transition: 0.5s;
+  background-size: 200% auto;
+  color: white;
+  box-shadow: 0 0 20px #eee;
+  border-radius: 10px;
+  display: block;
+}
+
+.error:hover {
+  background-position: right center; /* change the direction of the change here */
+  color: #fff;
+  text-decoration: none;
 }

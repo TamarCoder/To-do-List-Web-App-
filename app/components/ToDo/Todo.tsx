@@ -14,7 +14,6 @@ interface TodoProps {
 }
 
 export const Todo = (props: TodoProps) => {
- 
   const todos = isTodo((state) => state.todos);
 
   return (
@@ -39,10 +38,11 @@ export const Todo = (props: TodoProps) => {
         {todos.map((todo) => (
           <div className={styles.task}>
             <div className={styles.taskNote}></div>
+
             <div className={styles.taskInfo}>
               <div className={styles.taskHeading}>
                 <p className={styles.heading}> {todo.title}</p>
-                <Icon name={IconName.menu} width={25} height={25}/>
+                <Icon name={IconName.menu} width={25} height={25} />
               </div>
 
               <div className={styles.taskContent}>
@@ -50,18 +50,30 @@ export const Todo = (props: TodoProps) => {
                   <p>{todo.text}</p>
                 </div>
               </div>
+
               <div className={styles.taskData}>
-                <p className={styles.name}>
-                  <span className={styles.priorityExtreme}>
-                    {todo.priority.Priority}{" "}
-                  </span>
-                </p>
-                <p className={styles.name}>
-                  Status: <span className={styles.span}>Not Started</span>
-                </p>
-                <p className={styles.name}>
-                  Created on: <span className={styles.span}> {todo.date}</span>
-                </p>
+
+                <div className={styles.prriority}>
+                  <p className={styles.name}>
+                    <span className={styles.priorityExtreme}>
+                      {todo.priority.Priority}{" "}
+                    </span>
+                  </p>
+                  <p className={styles.name}>
+                    Status: <span className={styles.span}>Not Started</span>
+                  </p>
+                  <p className={styles.name}>
+                    Created on:{" "}
+                    <span className={styles.span}> {todo.date}</span>
+                  </p>
+                </div>
+
+                <div className={styles.editContianer}>
+                    <Button lable="Complated" variant="succsses"/>
+                    <Button lable="Edit Task" variant="warning"/>
+                    <Button lable="Delete Task" variant="error"/>
+
+                </div>
               </div>
             </div>
           </div>

@@ -19,10 +19,11 @@ export const LoginForm: FC<LoginFormProps> = ({
 }) => {
   return (
     <section className={styles.container}>
-      <form className={styles.loginForm}
-          onSubmit={(e) => {
-          e.preventDefault();  
-          onLogin();  
+      <form
+        className={styles.loginForm}
+        onSubmit={(e) => {
+          e.preventDefault();
+          onLogin();
         }}
       >
         <h1 className={styles.heading}>Sign In</h1>
@@ -47,11 +48,7 @@ export const LoginForm: FC<LoginFormProps> = ({
             <a href="#"> Remember Me</a>
           </div>
 
-          <Button
-            lable="Log In"
-            variant="primaryLight"
-            type={ButtonType.submit}
-          />
+          <Button lable="Log In" variant="primary" type={ButtonType.submit} />
 
           <span className={styles.span} onClick={onSwitchToRegister}>
             Don’t have an account? <a href="#"> Create One</a>

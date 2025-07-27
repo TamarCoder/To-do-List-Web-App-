@@ -1,6 +1,6 @@
 import React, { ReactNode } from "react";
 
-export type Variant = "default" | "primary" | 'primaryLight'|  "secondary" | "danger" | "outline";
+export type Variant = "default" | "primary" |  "succsses" | "warning" | "error";
 export type Size = "sm" | "md" | "lg";
 
 export enum ButtonType {

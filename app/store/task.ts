@@ -14,8 +14,6 @@ export type AddTodoArgs = {
   text: string;
   date: string;
   priority: Priority;
- 
-
 };
 //თასქი პრიორიტეტულობა
 export type Priority = {
@@ -24,8 +22,8 @@ export type Priority = {
 // რომელი ფუნქციის მიხედვით უნდა დაემატოს ჩემი თასქი;
 export type TodoStore = {
   todos: AddTodoArgs[];
-
   addTodo: (todo: AddTodoArgs) => void;
+  
 };
 
 export const isTodo = create<TodoStore>((set, get) => ({
