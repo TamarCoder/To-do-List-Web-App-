@@ -39,7 +39,7 @@ export const Todo = (props: TodoProps) => {
 
       <section className={styles.tasks} id="tasksContainer">
         {todos.map((todo) => (
-          <div key={todo.id}  className={styles.task}>
+          <div key={todo.id} className={styles.task}>
             <div className={styles.taskNote}></div>
 
             <div className={styles.taskInfo}>
@@ -69,6 +69,10 @@ export const Todo = (props: TodoProps) => {
                   </p>
                   <p className={styles.name}>
                     Created on:{" "}
+                    <span className={styles.span}> {todo.date}</span>
+                  </p>
+                  <p className={styles.name}>
+                     Task End Time:{" "}
                     <span className={styles.span}> {todo.date}</span>
                   </p>
                 </div>

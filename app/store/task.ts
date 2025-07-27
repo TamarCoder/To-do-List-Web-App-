@@ -16,7 +16,7 @@ export type TodoProperty = {
 export type AddTodoArgs = {
   title: string; // Fixed: removed id (auto-generated)
   text: string;
-  date: string;
+  date: string; 
   priority: Priority;
   // Fixed: removed completed (new todos are always incomplete)
 };

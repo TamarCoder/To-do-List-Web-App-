@@ -20,6 +20,8 @@ export const TaskPopap = (props: TaskPopapProps) => {
 
   const [isTitle, setIsTiTle] = useState("");
   const [isDate, setIsDate] = useState("");
+  const [endTime, setEndTime] = useState("");
+
   const [isText, setIsText] = useState("");
   const [isPriority, setIsPriority] = useState<Priority>({
     Priority: "Low",
@@ -37,6 +39,7 @@ export const TaskPopap = (props: TaskPopapProps) => {
     setIsTiTle("");
     setIsText("");
     setIsDate("");
+    setEndTime(""),
     setIsPriority({ Priority: "Low" });
 
     props.onClose();
@@ -69,7 +72,7 @@ export const TaskPopap = (props: TaskPopapProps) => {
 
           <div className={styles.wrapper}>
             <label htmlFor="data" className={styles.lable}>
-              Data
+              Task Start Time
             </label>
             <Input
               id="date"
@@ -80,6 +83,22 @@ export const TaskPopap = (props: TaskPopapProps) => {
               onChange={(e) => setIsDate(e.target.value)}
             />
           </div>
+          <div className={styles.wrapper}>
+            <label htmlFor="Enddata" className={styles.lable}>
+              Task End Time
+            </label>
+            <Input
+              id="Enddata"
+              type="date"
+              name="Enddata"
+              placeholder="Select a date"
+              value={endTime}
+              onChange={(e) => setEndTime(e.target.value)}
+            />
+          </div>
+
+
+
 
           <div className={styles.checkWrappers}>
             <label htmlFor="" className={styles.lable}>
