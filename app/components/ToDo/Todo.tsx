@@ -91,6 +91,8 @@ export const Todo = (props: TodoProps) => {
                     onClick={() => removeTodo(todo.id)}
                   />
                 </div>
+
+                
               </div>
             </div>
           </div>
