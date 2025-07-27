@@ -10,7 +10,7 @@ import { isTodo } from "../../store/task";
 
 export const Complate = () => {
   const completedTasks = isTodo((state) => state.completedTasks);
-  const removeCompaleteTask = isTodo((state) => state.removeCompaleteTask);
+  const removeCompaleteTask = isTodo((state) => state.removeCompleteTask);
 
   return (
     <section className={styles.todoContainer}>
