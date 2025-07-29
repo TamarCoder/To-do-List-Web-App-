@@ -29,7 +29,7 @@ export enum IconName {
 }
 
 export interface IconProps {
-    name: IconName;
+    name?: IconName;
     isActive? : boolean;
     onClick? :(e: React.MouseEvent) => void; 
     alt? : string;

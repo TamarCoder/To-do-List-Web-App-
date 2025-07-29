@@ -84,7 +84,7 @@ export const Todo = (props: TodoProps) => {
                     onClick={() => addCompletedTask(todo.id)}
                     disabled={todo.completed}
                   />
-                  <Button lable="Edit Task" variant="warning" />
+                  <Button lable="Edit Task" variant="warning" onClick={props.onAddTaskClick} />
                   <Button
                     lable="Delete Task"
                     variant="error"

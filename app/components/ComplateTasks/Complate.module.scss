@@ -4,7 +4,6 @@
 .todoContainer {
   display: flex;
   padding: 32px;
-
   flex-direction: column;
   align-items: center;
   border-radius: 24px;
@@ -14,14 +13,14 @@
   box-shadow: $shadow-xl;
   border: 1px solid rgba(255, 255, 255, 0.2);
   position: relative;
+ 
+  width: 100%;
   margin: 0 auto;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   background: linear-gradient(135deg, #f0f7ff 0%, #e0f2fe 100%);
   box-shadow: 0 121px 34px rgba(0, 0, 0, 0), 0 77px 31px rgba(0, 0, 0, 0.01),
     0 44px 26px rgba(0, 0, 0, 0.02), 0 19px 19px rgba(0, 0, 0, 0.03),
     0 5px 11px rgba(0, 0, 0, 0.04);
- 
-  margin: 0 auto;
 }
 
 .todoContainer::before {
@@ -40,31 +39,44 @@
   border-radius: 24px 24px 0 0;
 }
 
+// Responsive breakpoints
 @media (max-width: 1200px) {
   .todoContainer {
     padding: 28px;
     gap: 28px;
     border-radius: 20px;
+    max-width: 95%;
   }
 }
 
 @media (max-width: 768px) {
   .todoContainer {
-    padding: 24px;
-    gap: 24px;
+    padding: 20px;
+    gap: 20px;
     border-radius: 16px;
+    max-width: 95%;
   }
 }
 
 @media (max-width: 480px) {
   .todoContainer {
-    padding: 20px;
-    gap: 20px;
+    padding: 16px;
+    gap: 16px;
     border-radius: 12px;
+    max-width: 95%;
   }
 }
 
-/* Header Section - More elegant */
+@media (max-width: 360px) {
+  .todoContainer {
+    padding: 12px;
+    gap: 12px;
+    border-radius: 8px;
+    max-width: 95%;
+  }
+}
+
+/* Header Section - Responsive */
 .hedline {
   width: 100%;
   display: flex;
@@ -72,6 +84,22 @@
   justify-content: space-between;
   padding: 0;
   position: relative;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+@media (max-width: 640px) {
+  .hedline {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .hedline {
+    gap: 12px;
+  }
 }
 
 .boxLeft {
@@ -79,6 +107,7 @@
   align-items: center;
   gap: 16px;
   position: relative;
+  min-width: 0; // Prevent overflow
 }
 
 .boxLeft::before {
@@ -93,10 +122,30 @@
   border-radius: 2px;
 }
 
+@media (max-width: 480px) {
+  .boxLeft {
+    gap: 12px;
+  }
+  
+  .boxLeft::before {
+    left: -6px;
+    height: 24px;
+    width: 3px;
+  }
+}
+
 .boxLeft img {
   width: 28px;
   height: 28px;
   filter: drop-shadow(0 2px 4px rgba(255, 103, 103, 0.3));
+  flex-shrink: 0;
+}
+
+@media (max-width: 480px) {
+  .boxLeft img {
+    width: 24px;
+    height: 24px;
+  }
 }
 
 .boxLeft p {
@@ -110,9 +159,22 @@
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
+  white-space: nowrap;
 }
 
-/* Add Task Button - Modern design */
+@media (max-width: 768px) {
+  .boxLeft p {
+    font-size: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .boxLeft p {
+    font-size: 18px;
+  }
+}
+
+/* Add Task Button - Responsive */
 .addTask {
   padding: 14px 24px;
   color: $text-secondary;
@@ -129,6 +191,31 @@
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   position: relative;
   overflow: hidden;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+@media (max-width: 640px) {
+  .addTask {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .addTask {
+    padding: 12px 20px;
+    font-size: 14px;
+    border-radius: 12px;
+    gap: 8px;
+  }
+}
+
+@media (max-width: 360px) {
+  .addTask {
+    padding: 10px 16px;
+    font-size: 13px;
+  }
 }
 
 .addTask::before {
@@ -165,13 +252,14 @@
 .icon {
   pointer-events: none;
   transition: transform 0.3s ease;
+  flex-shrink: 0;
 }
 
 .addTask:hover .icon {
   transform: rotate(90deg);
 }
 
-/* Tasks Container - Improved spacing */
+/* Tasks Container */
 .tasks {
   width: 100%;
   display: flex;
@@ -180,7 +268,19 @@
   flex-direction: column;
 }
 
-/* Individual Task - Complete redesign */
+@media (max-width: 768px) {
+  .tasks {
+    gap: 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .tasks {
+    gap: 12px;
+  }
+}
+
+/* Individual Task - Responsive */
 .task {
   width: 100%;
   border: 1px solid $border-light;
@@ -192,6 +292,30 @@
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   position: relative;
   overflow: hidden;
+}
+
+@media (max-width: 768px) {
+  .task {
+    padding: 20px;
+    gap: 16px;
+    border-radius: 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .task {
+    padding: 16px;
+    gap: 12px;
+    border-radius: 12px;
+  }
+}
+
+@media (max-width: 360px) {
+  .task {
+    padding: 12px;
+    gap: 10px;
+    border-radius: 8px;
+  }
 }
 
 .task::before {
@@ -213,11 +337,17 @@
   transform: translateY(-4px);
 }
 
+@media (max-width: 768px) {
+  .task:hover {
+    transform: translateY(-2px);
+  }
+}
+
 .task:hover::before {
   transform: scaleY(1);
 }
 
-/* Task Note - Modern indicator */
+/* Task Note - Responsive */
 .taskNote {
   width: 16px;
   height: 16px;
@@ -229,6 +359,15 @@
   justify-content: center;
   box-shadow: 0 0 0 4px rgba(255, 103, 103, 0.1);
   position: relative;
+  margin-top: 4px; // Align with first line of text
+}
+
+@media (max-width: 480px) {
+  .taskNote {
+    width: 14px;
+    height: 14px;
+    margin-top: 2px;
+  }
 }
 
 .taskNote::after {
@@ -239,20 +378,41 @@
   border-radius: 50%;
 }
 
-/* Task Info - Better structure */
+@media (max-width: 480px) {
+  .taskNote::after {
+    width: 5px;
+    height: 5px;
+  }
+}
+
+/* Task Info - Responsive */
 .taskInfo {
   width: 100%;
   display: flex;
   flex-direction: column;
   gap: 16px;
+  min-width: 0; // Prevent overflow
 }
 
-/* Task Heading - Enhanced */
+@media (max-width: 768px) {
+  .taskInfo {
+    gap: 12px;
+  }
+}
+
+@media (max-width: 480px) {
+  .taskInfo {
+    gap: 10px;
+  }
+}
+
+/* Task Heading - Responsive */
 .taskHeading {
   width: 100%;
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   justify-content: space-between;
+  gap: 12px;
 }
 
 .heading {
@@ -262,25 +422,29 @@
   font-weight: 600;
   line-height: 1.4;
   letter-spacing: -0.01em;
+  flex: 1;
+  word-break: break-word;
+  min-width: 0;
 }
 
-/* Task Content - Improved layout */
+@media (max-width: 768px) {
+  .heading {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .heading {
+    font-size: 15px;
+  }
+}
+
+/* Task Content - Responsive */
 .taskContent {
   display: flex;
   align-items: flex-start;
   justify-content: space-between;
   gap: 16px;
-}
-
-.text {
-  flex: 1;
-}
-
-.text p {
-  color: $text-secondary;
-  font-size: 15px;
-  line-height: 1.6;
-  margin: 0;
 }
 
 @media (max-width: 768px) {
@@ -296,12 +460,74 @@
   }
 }
 
-/* Task Data - Modern badges */
+.text {
+  flex: 1;
+  min-width: 0;
+}
+
+.text p {
+  color: $text-secondary;
+  font-size: 15px;
+  line-height: 1.6;
+  margin: 0;
+  word-break: break-word;
+}
+
+@media (max-width: 768px) {
+  .text p {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  .text p {
+    font-size: 13px;
+    line-height: 1.5;
+  }
+}
+
+/* Task Data - Responsive */
 .taskData {
   display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
   gap: 16px;
   flex-wrap: wrap;
+}
+
+@media (max-width: 1024px) {
+  .taskData {
+    flex-direction: column;
+    gap: 12px;
+    align-items: stretch;
+  }
+}
+
+@media (max-width: 768px) {
+  .taskData {
+    gap: 10px;
+  }
+}
+
+.prriority {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
   align-items: center;
+}
+
+@media (max-width: 768px) {
+  .prriority {
+    gap: 8px;
+  }
+}
+
+@media (max-width: 480px) {
+  .prriority {
+    gap: 6px;
+    flex-direction: column;
+    align-items: flex-start;
+  }
 }
 
 .name {
@@ -318,6 +544,27 @@
   border-radius: 12px;
   border: 1px solid $border-light;
   transition: all 0.2s ease;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+@media (max-width: 768px) {
+  .name {
+    font-size: 12px;
+    padding: 5px 10px;
+    gap: 4px;
+  }
+}
+
+@media (max-width: 480px) {
+  .name {
+    font-size: 11px;
+    padding: 4px 8px;
+    white-space: normal;
+    word-break: break-word;
+    width: 100%;
+    justify-content: space-between;
+  }
 }
 
 .name:hover {
@@ -332,9 +579,24 @@
   background: rgba(102, 126, 234, 0.1);
   border-radius: 8px;
   font-size: 12px;
+  flex-shrink: 0;
 }
 
-/* Priority badges with different colors using attribute selectors */
+@media (max-width: 768px) {
+  .span {
+    font-size: 11px;
+    padding: 2px 6px;
+  }
+}
+
+@media (max-width: 480px) {
+  .span {
+    font-size: 10px;
+    padding: 1px 4px;
+  }
+}
+
+/* Priority badges */
 .priorityExtreme {
   color: $danger-color !important;
   background: rgba(239, 68, 68, 0.1) !important;
@@ -350,43 +612,46 @@
   background: rgba(16, 185, 129, 0.1) !important;
 }
 
-/* Responsive improvements */
+/* Edit Container - Responsive */
+.editContianer {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+@media (max-width: 1024px) {
+  .editContianer {
+    width: 100%;
+    justify-content: flex-end;
+  }
+}
+
 @media (max-width: 768px) {
-  .task {
-    padding: 20px;
-    gap: 16px;
+  .editContianer {
+    gap: 6px;
+    justify-content: stretch;
   }
-
-  .taskData {
-    gap: 12px;
-  }
-
-  .name {
-    font-size: 12px;
-    padding: 4px 8px;
+  
+  .editContianer > * {
+    flex: 1;
+    min-width: 0;
   }
 }
 
 @media (max-width: 480px) {
-  .task {
-    padding: 16px;
-    gap: 12px;
-  }
-
-  .taskData {
+  .editContianer {
     flex-direction: column;
-    align-items: flex-start;
-    gap: 8px;
+    gap: 4px;
+    width: 100%;
   }
-
-  .hedline {
-    flex-direction: column;
-    gap: 16px;
-    align-items: flex-start;
+  
+  .editContianer > * {
+    width: 100%;
   }
 }
 
-/* Loading animation for demo */
+/* Loading animation */
 @keyframes shimmer {
   0% {
     transform: translateX(-100%);
@@ -417,10 +682,24 @@
   animation: shimmer 2s infinite;
 }
 
-/* Demo styles */
+/* Demo styles - Responsive */
 .demo-container {
   max-width: 1400px;
+  width: 100%;
   margin: 0 auto;
+  padding: 0 16px;
+}
+
+@media (max-width: 768px) {
+  .demo-container {
+    padding: 0 12px;
+  }
+}
+
+@media (max-width: 480px) {
+  .demo-container {
+    padding: 0 8px;
+  }
 }
 
 .demo-info {
@@ -433,13 +712,57 @@
   border: 1px solid rgba(255, 255, 255, 0.2);
 }
 
+@media (max-width: 768px) {
+  .demo-info {
+    padding: 16px;
+    border-radius: 12px;
+    margin-bottom: 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .demo-info {
+    padding: 12px;
+    border-radius: 8px;
+    margin-bottom: 12px;
+  }
+}
+
 .demo-info h2 {
   color: $text-primary;
   margin-bottom: 8px;
   font-weight: 600;
+  font-size: 20px;
+}
+
+@media (max-width: 768px) {
+  .demo-info h2 {
+    font-size: 18px;
+    margin-bottom: 6px;
+  }
+}
+
+@media (max-width: 480px) {
+  .demo-info h2 {
+    font-size: 16px;
+    margin-bottom: 4px;
+  }
 }
 
 .demo-info p {
   color: $text-secondary;
   font-size: 14px;
+  line-height: 1.5;
+}
+
+@media (max-width: 768px) {
+  .demo-info p {
+    font-size: 13px;
+  }
+}
+
+@media (max-width: 480px) {
+  .demo-info p {
+    font-size: 12px;
+  }
 }

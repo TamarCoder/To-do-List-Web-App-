@@ -17,9 +17,9 @@ export default function Icon(props: IconProps & { isActive?: boolean }) {
     }
   };
 
-  const isActive = props.isActive ?? localActive;
+ 
 
-  const src = `/icon/${props.name}${isActive ? "-active" : ""}.svg`;
+  const src = `/icon/${props.name}${props.isActive ? "-active" : ""}.svg`;
 
   return (
     <Image
@@ -27,7 +27,7 @@ export default function Icon(props: IconProps & { isActive?: boolean }) {
       alt={`${props.name} icon`}
       width={props.width}
       height={props.height}
-      className={`${styles.icon} ${isActive ? styles.active : ""} ${props.className ?? ""}`}
+      className={`${styles.icon} ${props.isActive ? styles.active : ""} ${props.className ?? ""}`}
       onClick={handleClick}
     />
   );
