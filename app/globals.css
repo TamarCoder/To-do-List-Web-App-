@@ -1,5 +1,8 @@
-@import "./color.scss";
-@import "./media.scss";
+@import "tailwindcss/preflight";
+@import "tailwindcss/utilities";
+@import "tailwindcss";
+
+
 *,
 *::before,
 *::after {
@@ -16,16 +19,14 @@ a {
 ul {
   list-style: none;
 }
- 
 
 img {
   max-width: 100%;
   display: block;
 }
 
-.contentWrapper{
-   background: #F5F8FF;
-  
+.contentWrapper {
+  background: #f5f8ff;
 }
 .leyautWrapper {
   display: flex;
@@ -35,11 +36,10 @@ img {
 
   aside {
     background-color: tomato;
-    width: 100% ;
+    width: 100%;
     height: auto;
     border-radius: 12px;
-    max-width: 100%; 
-
+    max-width: 100%;
   }
 
   > :not(aside) {
@@ -48,7 +48,7 @@ img {
     width: 100%;
     max-width: 100%;
   }
-  @media (max-width: $breakpoint-tablet) {
+  @media (max-width: 768px) {
     flex-direction: column;
 
     aside {
@@ -62,11 +62,11 @@ img {
       height: auto;
     }
   }
-  @media (min-width: $breakpoint-desktop) {
+  @media (min-width: 1024px) {
     flex-direction: row;
 
     aside {
-      max-width: 365px; 
+      max-width: 365px;
       width: 100%;
       flex-shrink: 0;
       height: auto;

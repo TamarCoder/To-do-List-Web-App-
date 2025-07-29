@@ -2,7 +2,7 @@
 import { usePathname } from "next/navigation";
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
-import "./globals.scss";
+import "./globals.css";
 import Aside from "./components/Aside/Aside";
 import Header from "./components/Header/Header";
  
