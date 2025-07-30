@@ -11,6 +11,7 @@ import { stat } from "fs";
 
 interface TodoProps {
   onAddTaskClick?: () => void;
+  onAddEditClick?: () => void;
   ButtonProps?: ButtonProps;
 }
 
@@ -84,7 +85,7 @@ export const Todo = (props: TodoProps) => {
                     onClick={() => addCompletedTask(todo.id)}
                     disabled={todo.completed}
                   />
-                  <Button lable="Edit Task" variant="warning" onClick={props.onAddTaskClick} />
+                  <Button lable="Edit Task" variant="warning" onClick={props.onAddEditClick} />
                   <Button
                     lable="Delete Task"
                     variant="error"

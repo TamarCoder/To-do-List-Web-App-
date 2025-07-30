@@ -24,7 +24,8 @@ export enum IconName {
      plus ='plus',
      menu = 'menu',
      edit = 'edit',
-     trash = 'trash'
+     trash = 'trash',
+     categorie = 'categorie',
 
 }
 
